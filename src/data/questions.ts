@@ -1,0 +1,698 @@
+export interface Question {
+  id: number;
+  concept: string;
+  question: string;
+  choices: string[];
+  correctIndex: number;
+  explanation: string;
+}
+
+export const CONCEPTS = [
+  "Qualifications & Appointment",
+  "Term of Office & Fees",
+  "Acknowledgments",
+  "Oaths & Affirmations",
+  "Jurats",
+  "Signature by Mark",
+  "Protests",
+  "Depositions",
+  "Misconduct & Penalties",
+  "Prohibited Acts",
+  "Commissioner of Deeds",
+  "General Duties & Powers",
+];
+
+export const QUESTIONS: Question[] = [
+  // QUALIFICATIONS & APPOINTMENT
+  {
+    id: 1,
+    concept: "Qualifications & Appointment",
+    question: "What is the minimum age requirement to become a Notary Public in New York State?",
+    choices: ["16 years old", "18 years old", "21 years old", "25 years old"],
+    correctIndex: 1,
+    explanation: "New York requires notary public applicants to be at least 18 years of age under Executive Law Article 6.",
+  },
+  {
+    id: 2,
+    concept: "Qualifications & Appointment",
+    question: "A Notary Public in New York is appointed by:",
+    choices: ["The Governor", "The County Clerk", "The Secretary of State", "The State Attorney General"],
+    correctIndex: 2,
+    explanation: "Under New York Executive Law §130, the Secretary of State appoints notaries public.",
+  },
+  {
+    id: 3,
+    concept: "Qualifications & Appointment",
+    question: "Which of the following persons is eligible to become a NY Notary Public?",
+    choices: [
+      "A 17-year-old US citizen residing in NY",
+      "An 18-year-old lawfully admitted alien with a principal place of business in NY",
+      "A 20-year-old US citizen who resides in New Jersey with no NY business connections",
+      "A 25-year-old undocumented immigrant residing in NY",
+    ],
+    correctIndex: 1,
+    explanation: "NY Executive Law requires applicants to be 18+, and either a NY resident OR have a principal place of business in NY, and be a US citizen or lawfully admitted alien.",
+  },
+  {
+    id: 4,
+    concept: "Qualifications & Appointment",
+    question: "A non-resident of New York may be appointed as a NY Notary Public if they:",
+    choices: [
+      "Have a relative living in NY",
+      "Have a principal office or place of business in NY",
+      "Pay a higher application fee",
+      "Non-residents are never eligible for NY notary appointment",
+    ],
+    correctIndex: 1,
+    explanation: "Non-residents with their principal office or place of business in NY may be appointed as NY notaries public under Executive Law §130.",
+  },
+  {
+    id: 5,
+    concept: "Qualifications & Appointment",
+    question: "The NY Notary Public examination is administered by:",
+    choices: [
+      "The County Clerk's office",
+      "The Department of State's Division of Licensing Services",
+      "The Board of Regents",
+      "The local bar association",
+    ],
+    correctIndex: 1,
+    explanation: "The Department of State's Division of Licensing Services administers the notary public examination in New York.",
+  },
+
+  // TERM OF OFFICE & FEES
+  {
+    id: 6,
+    concept: "Term of Office & Fees",
+    question: "The term of office for a New York Notary Public is:",
+    choices: ["1 year", "2 years", "4 years", "Lifetime appointment"],
+    correctIndex: 2,
+    explanation: "Under NY Executive Law §130, notaries public are appointed for a term of four years.",
+  },
+  {
+    id: 7,
+    concept: "Term of Office & Fees",
+    question: "What is the maximum fee a New York Notary Public may charge for administering an oath or affirmation?",
+    choices: ["$1.00", "$2.00", "$5.00", "$10.00"],
+    correctIndex: 1,
+    explanation: "Under NY Executive Law §136, the fee for administering an oath or affirmation is $2.00.",
+  },
+  {
+    id: 8,
+    concept: "Term of Office & Fees",
+    question: "The statutory fee for taking an acknowledgment or proof of execution in New York is:",
+    choices: ["$1.00 per document", "$2.00 per signature of each person", "$5.00 per document", "$10.00 per transaction"],
+    correctIndex: 1,
+    explanation: "NY Executive Law §136 sets the acknowledgment fee at $2.00 for each person whose signature is acknowledged.",
+  },
+  {
+    id: 9,
+    concept: "Term of Office & Fees",
+    question: "A NY notary public charges $10 for a single acknowledgment. This is:",
+    choices: [
+      "Permissible if the client agrees to pay it",
+      "Permissible only for complex documents",
+      "A violation that can result in removal from office and criminal charges",
+      "Permissible if the notary is also an attorney",
+    ],
+    correctIndex: 2,
+    explanation: "Charging more than the statutory fee of $2.00 per acknowledgment is misconduct and can result in removal from office and criminal liability under Executive Law §135-a.",
+  },
+  {
+    id: 10,
+    concept: "Term of Office & Fees",
+    question: "When a notary public changes their address, they must notify:",
+    choices: [
+      "The County Clerk only",
+      "The Secretary of State",
+      "The local court system",
+      "No notification is required",
+    ],
+    correctIndex: 1,
+    explanation: "A notary must notify the Secretary of State of any change in address to keep their records current.",
+  },
+
+  // ACKNOWLEDGMENTS
+  {
+    id: 11,
+    concept: "Acknowledgments",
+    question: "An acknowledgment requires that the signer:",
+    choices: [
+      "Swear to the truth of the contents of the document",
+      "Personally appear before the notary and acknowledge that the signature is their own free act",
+      "Sign in the presence of two witnesses",
+      "Present two forms of government-issued identification",
+    ],
+    correctIndex: 1,
+    explanation: "An acknowledgment is a formal declaration by the signer, made before the notary, that the signature on the document is their own free and voluntary act. The signer must personally appear before the notary.",
+  },
+  {
+    id: 12,
+    concept: "Acknowledgments",
+    question: "Which statement correctly describes the difference between an acknowledgment and a jurat?",
+    choices: [
+      "A jurat requires only that the signer acknowledge the document is their act; an acknowledgment requires swearing to the truth",
+      "An acknowledgment requires only that the signer acknowledge the document is their act; a jurat requires the signer to swear to the truth of the document's contents",
+      "They are legally identical",
+      "A jurat is used for real property; an acknowledgment is used for personal property",
+    ],
+    correctIndex: 1,
+    explanation: "In an acknowledgment, the signer acknowledges the document as their act. In a jurat, the signer swears or affirms to the truth of the document's contents. These are distinct notarial acts with different purposes.",
+  },
+  {
+    id: 13,
+    concept: "Acknowledgments",
+    question: "The certificate of acknowledgment must include all of the following EXCEPT:",
+    choices: [
+      "The name of the person acknowledging",
+      "The date on which the acknowledgment was taken",
+      "The social security number of the signer",
+      "The signature and official title of the notary",
+    ],
+    correctIndex: 2,
+    explanation: "The certificate of acknowledgment requires the name of the acknowledging party, the date, and the notary's signature and title. Social security numbers are not required and should not be included.",
+  },
+  {
+    id: 14,
+    concept: "Acknowledgments",
+    question: "A notary public may take an acknowledgment from a person who:",
+    choices: [
+      "Sends a signed letter requesting acknowledgment without appearing in person",
+      "Has their signature acknowledged by a third party who appears before the notary",
+      "Personally appears before the notary and acknowledges their signature",
+      "Submits a notarized copy of a government ID",
+    ],
+    correctIndex: 2,
+    explanation: "The person whose signature is being acknowledged must personally appear before the notary. Remote or substitute appearances are not permitted for acknowledgments under NY law.",
+  },
+
+  // OATHS & AFFIRMATIONS
+  {
+    id: 15,
+    concept: "Oaths & Affirmations",
+    question: "The difference between an oath and an affirmation is:",
+    choices: [
+      "An oath is legally binding; an affirmation is not",
+      "An oath involves a reference to God or a supreme being; an affirmation is a solemn declaration without such reference",
+      "An oath is for written documents; an affirmation is for oral statements only",
+      "An affirmation is only available to attorneys",
+    ],
+    correctIndex: 1,
+    explanation: "An oath involves swearing by God or a supreme being. An affirmation is a solemn declaration made by persons who have conscientious objections to taking an oath. Both are legally equivalent.",
+  },
+  {
+    id: 16,
+    concept: "Oaths & Affirmations",
+    question: "A notary public is authorized to administer oaths in connection with:",
+    choices: [
+      "Criminal proceedings only",
+      "Federal proceedings only",
+      "Affidavits, depositions, and other legal matters requiring a sworn statement",
+      "Real estate transactions only",
+    ],
+    correctIndex: 2,
+    explanation: "NY notaries are empowered to administer oaths and affirmations in connection with affidavits, depositions, and various legal matters requiring sworn statements.",
+  },
+  {
+    id: 17,
+    concept: "Oaths & Affirmations",
+    question: "If a notary public knowingly takes a false oath, they may be charged with:",
+    choices: [
+      "A minor civil infraction only",
+      "Perjury, which is a felony",
+      "A Class B misdemeanor",
+      "No criminal offense, only administrative removal",
+    ],
+    correctIndex: 1,
+    explanation: "A notary who administers a false oath or willfully makes a false certificate may be subject to perjury charges, which is a felony in New York.",
+  },
+
+  // JURATS
+  {
+    id: 18,
+    concept: "Jurats",
+    question: "The phrase that typically concludes a jurat is:",
+    choices: [
+      '"Acknowledged before me this ___ day of ___"',
+      '"Subscribed and sworn to (or affirmed) before me this ___ day of ___"',
+      '"In witness whereof I have hereunto set my hand"',
+      '"Know all men by these presents"',
+    ],
+    correctIndex: 1,
+    explanation: '"Subscribed and sworn to (or affirmed) before me" is the standard jurat language, indicating the signer swore to the document\'s contents before the notary.',
+  },
+  {
+    id: 19,
+    concept: "Jurats",
+    question: "For a jurat, the signer must:",
+    choices: [
+      "Only sign the document in the notary's presence",
+      "Sign and swear or affirm to the truthfulness of the document's contents before the notary",
+      "Acknowledge the document as their voluntary act",
+      "Have two witnesses present",
+    ],
+    correctIndex: 1,
+    explanation: "A jurat requires the signer to both sign the document and swear or affirm before the notary that the contents are true. The physical presence and administration of the oath are both essential.",
+  },
+
+  // SIGNATURE BY MARK
+  {
+    id: 20,
+    concept: "Signature by Mark",
+    question: "When a person cannot write their name and must use a mark (such as an 'X'), a NY notary public must:",
+    choices: [
+      "Refuse to notarize, as only written signatures are acceptable",
+      "Have two witnesses who sign their names and addresses near the mark",
+      "Have one witness and a physician certify the person's disability",
+      "Accept the mark without any additional witnesses",
+    ],
+    correctIndex: 1,
+    explanation: "Under NY law, when a person signs with a mark, two witnesses must be present and must sign their names and addresses near the mark. The notary then completes the certificate noting the circumstances.",
+  },
+  {
+    id: 21,
+    concept: "Signature by Mark",
+    question: "When a signature by mark is used, the notary's certificate must include:",
+    choices: [
+      "A medical certificate explaining why the signer cannot write",
+      "The names and addresses of two witnesses who witnessed the making of the mark",
+      "A photograph of the signer",
+      "The name and address of only one witness",
+    ],
+    correctIndex: 1,
+    explanation: "The certificate for a signature by mark must include the names and addresses of two witnesses who were present when the mark was made. This protects the integrity of the notarial act.",
+  },
+
+  // PROTESTS
+  {
+    id: 22,
+    concept: "Protests",
+    question: "A NY notary public has the authority to protest:",
+    choices: [
+      "Court orders they disagree with",
+      "Negotiable instruments such as promissory notes and bills of exchange for nonpayment or nonacceptance",
+      "Real estate contracts for breach of terms",
+      "Insurance policies for wrongful denial of claims",
+    ],
+    correctIndex: 1,
+    explanation: "Notaries public in NY are empowered to protest negotiable instruments (such as checks, drafts, notes) that have been dishonored by nonpayment or nonacceptance.",
+  },
+  {
+    id: 23,
+    concept: "Protests",
+    question: "When protesting a dishonored negotiable instrument, the notary must:",
+    choices: [
+      "File the protest with the Secretary of State within 24 hours",
+      "Present the instrument for payment, and upon dishonor, give notice to all parties liable",
+      "Retain the instrument for at least one year",
+      "Notify the issuing bank only",
+    ],
+    correctIndex: 1,
+    explanation: "The protest process requires the notary to present the instrument for payment/acceptance, note the dishonor, and then give notice to all parties liable on the instrument (endorsers, makers, drawers).",
+  },
+  {
+    id: 24,
+    concept: "Protests",
+    question: "A notarial protest is most commonly used in connection with:",
+    choices: [
+      "Real estate deeds",
+      "Negotiable instruments such as checks and drafts",
+      "Wills and testaments",
+      "Marriage certificates",
+    ],
+    correctIndex: 1,
+    explanation: "Protests are a formal notarial act used in commercial law when negotiable instruments (checks, drafts, promissory notes) are dishonored by nonpayment or nonacceptance.",
+  },
+
+  // DEPOSITIONS
+  {
+    id: 25,
+    concept: "Depositions",
+    question: "A NY notary public may take depositions in:",
+    choices: [
+      "Criminal proceedings only",
+      "Civil proceedings",
+      "Both criminal and civil proceedings equally",
+      "Administrative proceedings only",
+    ],
+    correctIndex: 1,
+    explanation: "NY notaries may take depositions in civil proceedings. The authority to take depositions in criminal proceedings is more restricted and typically requires judicial authorization.",
+  },
+  {
+    id: 26,
+    concept: "Depositions",
+    question: "A deposition taken by a notary public involves:",
+    choices: [
+      "Certifying copies of original documents",
+      "Taking sworn testimony of a witness outside of court",
+      "Witnessing the signing of a will",
+      "Authenticating a deed for real property transfer",
+    ],
+    correctIndex: 1,
+    explanation: "A deposition is the sworn out-of-court testimony of a witness, recorded in writing. Notaries are authorized to administer the oath and certify the deposition in civil matters.",
+  },
+
+  // MISCONDUCT & PENALTIES
+  {
+    id: 27,
+    concept: "Misconduct & Penalties",
+    question: "A notary public who is guilty of misconduct in the performance of their duties may be:",
+    choices: [
+      "Issued a warning letter only for a first offense",
+      "Removed from office by the Secretary of State",
+      "Fined up to $500 with no other consequence",
+      "Suspended for 30 days automatically",
+    ],
+    correctIndex: 1,
+    explanation: "Under Executive Law §130, the Secretary of State may remove a notary from office for misconduct in the performance of their duties, after a hearing.",
+  },
+  {
+    id: 28,
+    concept: "Misconduct & Penalties",
+    question: "Under NY law, a notary public who charges fees above the statutory maximum is guilty of:",
+    choices: [
+      "A Class A misdemeanor",
+      "A civil infraction with a maximum $50 fine",
+      "No offense, as fee agreements are private matters",
+      "A federal offense",
+    ],
+    correctIndex: 0,
+    explanation: "Under NY Executive Law §135-a, a notary who charges fees in excess of the statutory amounts is guilty of a Class A misdemeanor.",
+  },
+  {
+    id: 29,
+    concept: "Misconduct & Penalties",
+    question: "A notary public who is convicted of a felony:",
+    choices: [
+      "Must wait 5 years before reapplying for notary status",
+      "May never serve as a notary public",
+      "Will automatically have their notary commission revoked",
+      "May continue as a notary if the felony was not related to the notarial duties",
+    ],
+    correctIndex: 2,
+    explanation: "A conviction for a felony results in automatic revocation of the notary's commission. The Secretary of State will remove a notary upon learning of such a conviction.",
+  },
+  {
+    id: 30,
+    concept: "Misconduct & Penalties",
+    question: "A notary public who willfully makes a false certificate is subject to:",
+    choices: [
+      "Civil liability only",
+      "Criminal liability including potential forgery charges",
+      "A warning and mandatory retraining",
+      "Suspension for up to 30 days",
+    ],
+    correctIndex: 1,
+    explanation: "Making a false certificate is a serious offense that can expose the notary to criminal liability, including charges such as forgery or filing a false instrument under the NY Penal Law.",
+  },
+
+  // PROHIBITED ACTS
+  {
+    id: 31,
+    concept: "Prohibited Acts",
+    question: "A notary public is PROHIBITED from:",
+    choices: [
+      "Taking acknowledgments in their county of residence",
+      "Notarizing documents in which they have a direct financial interest",
+      "Administering oaths to witnesses in legal proceedings",
+      "Certifying that a copy of a document is a true copy",
+    ],
+    correctIndex: 1,
+    explanation: "A notary public should not notarize a document in which they have a direct financial interest, as this creates a conflict of interest. The notary must be a disinterested party.",
+  },
+  {
+    id: 32,
+    concept: "Prohibited Acts",
+    question: "Which of the following is PROHIBITED for a NY notary public?",
+    choices: [
+      "Notarizing a document for a family member who personally appears",
+      "Notarizing their own signature on a document",
+      "Administering oaths in another county in New York",
+      "Charging the statutory fee",
+    ],
+    correctIndex: 1,
+    explanation: "A notary cannot notarize their own signature—doing so would be an act of self-notarization, which is prohibited because the notary cannot be both the signer and the certifying officer.",
+  },
+  {
+    id: 33,
+    concept: "Prohibited Acts",
+    question: "A notary public who acts without authority or whose commission has expired:",
+    choices: [
+      "Is protected by good faith reliance",
+      "May be liable for damages and subject to criminal penalties",
+      "Has a 30-day grace period after expiration",
+      "Is permitted to act if they have applied for renewal",
+    ],
+    correctIndex: 1,
+    explanation: "Acting as a notary after commission expiration or without proper authority is unauthorized practice and can expose the individual to civil liability and potential criminal charges.",
+  },
+  {
+    id: 34,
+    concept: "Prohibited Acts",
+    question: "A notary public CANNOT legally:",
+    choices: [
+      "Take depositions in civil matters",
+      "Protest negotiable instruments",
+      "Practice law by giving legal advice as part of a notarial act",
+      "Administer oaths for affidavits",
+    ],
+    correctIndex: 2,
+    explanation: "Notaries public cannot practice law. Giving legal advice, preparing legal documents, or using their notarial position to engage in the unauthorized practice of law is strictly prohibited.",
+  },
+
+  // COMMISSIONER OF DEEDS
+  {
+    id: 35,
+    concept: "Commissioner of Deeds",
+    question: "The primary purpose of a Commissioner of Deeds is to:",
+    choices: [
+      "Record deeds in the county clerk's office",
+      "Take acknowledgments of instruments to be recorded or filed in NY when the signer is outside of NY",
+      "Notarize wills and trusts exclusively",
+      "Act as a backup when notaries are unavailable",
+    ],
+    correctIndex: 1,
+    explanation: "A Commissioner of Deeds is empowered to take acknowledgments of documents when the signer is in another state or jurisdiction but the document is to be filed or recorded in New York.",
+  },
+  {
+    id: 36,
+    concept: "Commissioner of Deeds",
+    question: "A Commissioner of Deeds appointed by the Mayor of NYC has authority to act:",
+    choices: [
+      "Throughout all of New York State",
+      "Only within the five boroughs of New York City",
+      "Only in the borough where they reside",
+      "Throughout the United States",
+    ],
+    correctIndex: 1,
+    explanation: "A Commissioner of Deeds appointed by the Mayor of the City of New York has authority to act throughout the five boroughs of New York City.",
+  },
+
+  // GENERAL DUTIES & POWERS
+  {
+    id: 37,
+    concept: "General Duties & Powers",
+    question: "The geographical area in which a NY notary public may exercise their notarial functions is:",
+    choices: [
+      "Only in the county where they are registered",
+      "Throughout the entire State of New York",
+      "Only in their county of residence",
+      "Throughout the northeastern United States",
+    ],
+    correctIndex: 1,
+    explanation: "A NY notary public may exercise their powers throughout the entire State of New York, not just in the county where they reside or are registered.",
+  },
+  {
+    id: 38,
+    concept: "General Duties & Powers",
+    question: "When signing in their official capacity, a notary public must:",
+    choices: [
+      "Use only a rubber stamp signature",
+      "Sign their name exactly as it appears on their commission and include their title",
+      "Use their initials only to save time",
+      "Include their bar number if they are an attorney",
+    ],
+    correctIndex: 1,
+    explanation: "A notary must sign their name exactly as it appears on their commission and must include their official title (Notary Public, State of New York) along with their county of qualification and commission expiration date.",
+  },
+  {
+    id: 39,
+    concept: "General Duties & Powers",
+    question: "A notary public's signature and official information on documents should include:",
+    choices: [
+      "Only their printed name and signature",
+      "Their name, title, county of qualification, and commission expiration date",
+      "Their name, home address, and phone number",
+      "Their name, commission number, and employer's name",
+    ],
+    correctIndex: 1,
+    explanation: "Under NY law, notaries must include their name, title (Notary Public, State of New York), the county in which they are qualified, and their commission expiration date on all notarized documents.",
+  },
+  {
+    id: 40,
+    concept: "General Duties & Powers",
+    question: "An attorney who is also a notary public in NY:",
+    choices: [
+      "Cannot perform notarial acts for their own clients",
+      "May take the acknowledgment or proof of a party to a legal instrument even if they drew the instrument for that client",
+      "Must resign their notary commission upon being admitted to the bar",
+      "Can charge double the statutory fee due to professional status",
+    ],
+    correctIndex: 1,
+    explanation: "Under NY Executive Law §138, an attorney who is also a notary public is specifically permitted to take the acknowledgment or proof of a party to a written instrument even if the attorney drew the instrument, which is an exception to the conflict-of-interest rule.",
+  },
+  {
+    id: 41,
+    concept: "General Duties & Powers",
+    question: "A notary public who has changed their name due to marriage or legal name change must:",
+    choices: [
+      "Continue using their former name until their commission expires",
+      "Notify the Secretary of State and may be issued a new commission",
+      "Immediately cease all notarial activities",
+      "Have all previous notarizations invalidated",
+    ],
+    correctIndex: 1,
+    explanation: "A notary who changes their name must notify the Secretary of State. A new commission may be issued reflecting the new name, and prior notarizations under the former name remain valid.",
+  },
+  {
+    id: 42,
+    concept: "Qualifications & Appointment",
+    question: "The application fee for appointment as a NY Notary Public is:",
+    choices: ["$15", "$30", "$60", "$100"],
+    correctIndex: 1,
+    explanation: "The application fee for a NY notary public appointment is $60 (note: fees may change; always verify current fee schedule with the Department of State).",
+  },
+  {
+    id: 43,
+    concept: "Misconduct & Penalties",
+    question: "A notary public who is removed from office for misconduct may reapply for appointment:",
+    choices: [
+      "Immediately after removal",
+      "After a waiting period determined by the Secretary of State",
+      "Only with approval of the County Clerk",
+      "Never; removal is permanent",
+    ],
+    correctIndex: 1,
+    explanation: "Removal from office does not necessarily mean permanent disqualification. The notary may reapply, but the Secretary of State has discretion to deny the application based on the nature of the misconduct.",
+  },
+  {
+    id: 44,
+    concept: "Acknowledgments",
+    question: "A 'proof of execution' differs from an acknowledgment in that:",
+    choices: [
+      "They are identical legal procedures",
+      "Proof of execution involves a subscribing witness who identifies the signer; acknowledgment requires the signer to appear personally",
+      "Proof of execution is only used for wills",
+      "Acknowledgment requires two witnesses; proof of execution requires none",
+    ],
+    correctIndex: 1,
+    explanation: "In a proof of execution, the instrument is proven through a subscribing witness who appears before the notary and swears that they saw the grantor/signer execute the document. In an acknowledgment, the signer personally appears.",
+  },
+  {
+    id: 45,
+    concept: "General Duties & Powers",
+    question: "Notarial acts performed by a NY notary in another state are:",
+    choices: [
+      "Fully valid in all US states automatically",
+      "Only valid in NY",
+      "Valid in the other state only if that state's law recognizes NY notarial acts",
+      "Always invalid outside of New York",
+    ],
+    correctIndex: 2,
+    explanation: "A NY notary's authority is limited to New York State. Notarial acts performed outside NY would be governed by the law of the state where performed, and recognition depends on that state's laws.",
+  },
+  {
+    id: 46,
+    concept: "Term of Office & Fees",
+    question: "If a notary public moves to another state and no longer maintains a principal office in NY, their NY notary commission:",
+    choices: [
+      "Remains valid until the expiration date",
+      "Is automatically revoked upon moving",
+      "Must be surrendered to the Secretary of State within 30 days",
+      "Converts to an honorary title with no legal authority",
+    ],
+    correctIndex: 1,
+    explanation: "If a notary public no longer meets the residency or principal office requirement (no longer a NY resident and has no principal office in NY), they lose eligibility and the commission is effectively invalidated.",
+  },
+  {
+    id: 47,
+    concept: "Prohibited Acts",
+    question: "A notary public who advertises their services using the term 'Notario Publico' in a way that implies legal expertise beyond notarial acts is:",
+    choices: [
+      "Permitted if they are bilingual",
+      "Engaging in misconduct that may constitute unauthorized practice of law",
+      "Allowed as a marketing tool",
+      "Required in communities with significant Spanish-speaking populations",
+    ],
+    correctIndex: 1,
+    explanation: "Using the title 'Notario Publico' can mislead immigrants who associate this term (from Latin American legal systems) with a lawyer's role. Doing so to imply legal services constitutes unauthorized practice of law and is prohibited.",
+  },
+  {
+    id: 48,
+    concept: "Oaths & Affirmations",
+    question: "A person may make an affirmation rather than taking an oath when they:",
+    choices: [
+      "Are not US citizens",
+      "Are under 21 years of age",
+      "Have conscientious or religious objections to taking an oath",
+      "Are testifying against themselves",
+    ],
+    correctIndex: 2,
+    explanation: "Persons with conscientious or religious objections to taking an oath (such as Quakers) may instead make a solemn affirmation, which carries the same legal weight as an oath.",
+  },
+  {
+    id: 49,
+    concept: "Protests",
+    question: "A protest of a dishonored instrument must be made:",
+    choices: [
+      "Within one week of dishonor",
+      "On the day of dishonor or the next business day",
+      "Within 30 days of dishonor",
+      "Within 90 days of dishonor",
+    ],
+    correctIndex: 1,
+    explanation: "For negotiable instruments, a protest must be made on the day of dishonor or the next business day to preserve the rights of all parties liable on the instrument.",
+  },
+  {
+    id: 50,
+    concept: "Depositions",
+    question: "When taking a deposition, the notary public must:",
+    choices: [
+      "Be a licensed attorney",
+      "Administer the oath to the deponent and certify the deposition",
+      "Summarize the testimony in their own words",
+      "File the deposition with the county clerk within 5 days",
+    ],
+    correctIndex: 1,
+    explanation: "When taking a deposition, the notary administers the oath to the witness (deponent) and then certifies that the deposition was properly taken. The notary does not summarize or alter the testimony.",
+  },
+  {
+    id: 51,
+    concept: "General Duties & Powers",
+    question: "A notary public seal or stamp in New York:",
+    choices: [
+      "Is required on all notarized documents",
+      "Is not required by state law but is commonly used",
+      "Must be a round seal only",
+      "Must contain the notary's photograph",
+    ],
+    correctIndex: 1,
+    explanation: "New York State does not require notaries to use a seal or stamp. However, many use one for practical purposes. When used, it typically includes the notary's name, title, and county of qualification.",
+  },
+  {
+    id: 52,
+    concept: "Misconduct & Penalties",
+    question: "Which of the following would constitute misconduct by a NY notary public?",
+    choices: [
+      "Taking an acknowledgment in a county other than where they are registered",
+      "Refusing to notarize a document they believe to be fraudulent",
+      "Certifying an acknowledgment without the signer actually appearing before them",
+      "Charging the statutory fee of $2.00",
+    ],
+    correctIndex: 2,
+    explanation: "Certifying an acknowledgment without the personal appearance of the signer is a serious form of notarial misconduct and fraud. The signer must personally appear before the notary.",
+  },
+];
+
+export const EXAM_QUESTION_COUNT = 40;
+export const PASSING_SCORE_PERCENT = 70;
